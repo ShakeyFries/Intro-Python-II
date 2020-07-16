@@ -4,7 +4,7 @@ from player import Player
 # Declare all the rooms
 
 room = {
-    'outside':  Room("Outside Cave Entrance",
+    'outside':  Room("Outside to the Cave Entrance",
                      "North of you, the cave mount beckons"),
 
     'foyer':    Room("Foyer", """Dim light filters in from the south. Dusty
@@ -55,7 +55,7 @@ player = Player("You are currently ",room["outside"])
 
 while True: 
     player.current_room
-    print("\n You are currently", player.current_room.name)
+    print("\n You are currently in the", player.current_room.name)
     print("\n", player.current_room.description)
     print("\n What do you do next? \n Proceed N, S, E, or W")
 
@@ -67,28 +67,28 @@ while True:
 
     if command == "n":
         print("\n You proceed north... \n")
-        if player.current_room.n_to is 0:
-            print("you cannot procees that way, please try a different direction.")
+        if player.current_room.n_to is None:
+            print("you cannot proceed that way, please try a different direction.")
         else:
             player.current_room = player.current_room.n_to
 
     elif command == "s":
         print("\n You venture south... \n")
-        if player.current_room.s_to is 0:
-            print("you cannot procees that way, please try a different direction.")
+        if player.current_room.s_to is None:
+            print("you cannot proceed that way, please try a different direction.")
         else:
             player.current_room = player.current_room.s_to
     elif command == "w":
         print("\n You press on to the west...")
-        if player.current_room.w is 0:
-           print("you cannot procees that way, please try a different direction.")
+        if player.current_room.w_to is None:
+           print("you cannot proceed that way, please try a different direction.")
         else: 
              player.current_room = player.current_room.w_to
 
     elif command == "e":
         print("\n You journey east... \n")
-        if player.current_room.n_to is 0:
-            print("you cannot procees that way, please try a different direction.")
+        if player.current_room.e_to is None:
+            print("you cannot proceed that way, please try a different direction.")
         else:
              player.current_room = player.current_room.e_to
 
