@@ -57,10 +57,40 @@ while True:
     player.current_room
     print("\n You are currently", player.current_room.name)
     print("\n", player.current_room.description)
-    print("\n What do you do next?")
+    print("\n What do you do next? \n Proceed N, S, E, or W")
+
     command = input(" Please enter your instructions. or enter q to quit on your adventure.")
 
-    if command == 'q':
+    if command == "q":
         print("The adventure was too much for you. Try again once you're feeling adventerous.")
         break
 
+    if command == "n":
+        print("\n You proceed north... \n")
+        if player.current_room.n_to is 0:
+            print("you cannot procees that way, please try a different direction.")
+        else:
+            player.current_room = player.current_room.n_to
+
+    elif command == "s":
+        print("\n You venture south... \n")
+        if player.current_room.s_to is 0:
+            print("you cannot procees that way, please try a different direction.")
+        else:
+            player.current_room = player.current_room.s_to
+    elif command == "w":
+        print("\n You press on to the west...")
+        if player.current_room.w is 0:
+           print("you cannot procees that way, please try a different direction.")
+        else: 
+             player.current_room = player.current_room.w_to
+
+    elif command == "e":
+        print("\n You journey east... \n")
+        if player.current_room.n_to is 0:
+            print("you cannot procees that way, please try a different direction.")
+        else:
+             player.current_room = player.current_room.e_to
+
+    else:
+        print("\n THAT IS FORBIDDEN, MORTAL!")
