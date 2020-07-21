@@ -21,9 +21,9 @@ to north. The smell of gold permeates the air."""),
 chamber! Sadly, it has already been completely emptied by
 earlier adventurers. The only exit is to the south."""),
 }
-# command + ctrl + spacebar
+x
 
-# Link rooms together
+
 
 room['outside'].n_to = room['foyer']
 room['foyer'].s_to = room['outside']
@@ -34,6 +34,8 @@ room['narrow'].w_to = room['foyer']
 room['narrow'].n_to = room['treasure']
 room['treasure'].s_to = room['narrow']
 
+
+# Link rooms together
 item = {
     "Longsword": Item("🗡", "A rune laden silver long sword lodged into a stone."),
 
@@ -42,8 +44,6 @@ item = {
     "Torch": Item("🔥", "A lit torch sits nice on the wall."),
 
     "Key": Item("🗝", "Rusty key, it's probably important..."), 
-
-
 }
 
 #

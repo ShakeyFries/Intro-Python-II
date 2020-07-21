@@ -1,4 +1,4 @@
-from item import Item
+from .item import Item
 
 # Implement a class to hold room information. This should have name and
 # description attributes.
