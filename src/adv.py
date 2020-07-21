@@ -1,6 +1,6 @@
 from room import Room
 from player import Player
-
+from item import Item 
 # Declare all the rooms
 
 room = {
@@ -21,7 +21,7 @@ to north. The smell of gold permeates the air."""),
 chamber! Sadly, it has already been completely emptied by
 earlier adventurers. The only exit is to the south."""),
 }
-
+# command + ctrl + spacebar
 
 # Link rooms together
 
@@ -33,6 +33,18 @@ room['overlook'].s_to = room['foyer']
 room['narrow'].w_to = room['foyer']
 room['narrow'].n_to = room['treasure']
 room['treasure'].s_to = room['narrow']
+
+item = {
+    "Longsword": Item("🗡", "A rune laden silver long sword lodged into a stone."),
+
+    "Flask": Item("Flask", "You cannot get ye flask..."),
+
+    "Torch": Item("🔥", "A lit torch sits nice on the wall."),
+
+    "Key": Item("🗝", "Rusty key, it's probably important..."), 
+
+
+}
 
 #
 # Main
