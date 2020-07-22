@@ -1,5 +1,6 @@
 from src.room import Room
 
+
 # Write a class to hold player information, e.g. what room they are in
 # currently.
 
@@ -15,3 +16,10 @@ class Player:
     def drop_item(self, item):
         self.current_room.get_item(item)
         self.items.remove(item)
+
+     def inventory(self):
+        if len(self.items) == 0:
+            print("You have nothing")
+
+        for item in self.items:
+            print(item.name)
